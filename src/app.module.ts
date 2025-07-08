@@ -1,7 +1,5 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 
 @Module({
   imports: [
@@ -10,7 +8,7 @@ import { AppService } from './app.service';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'westwing',
+      password: '',
       database: 'db_crud_farmacia',
       entities: [],
       synchronize: true
