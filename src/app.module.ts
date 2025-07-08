@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Categoria } from './categoria/entities/categoria.entity';
-import { CategoriaController } from './categoria/controllers/categoria.controller';
-import { CategoriaService } from './categoria/services/categoria.service';
 import { CategoriaModule } from './categoria/categoria.module';
+import { Produto } from './produto/entities/produto.entity';
+import { ProdutoModule } from './produto/produto.module';
 
 @Module({
   imports: [
@@ -14,10 +14,11 @@ import { CategoriaModule } from './categoria/categoria.module';
       username: 'root',
       password: '',
       database: 'db_crud_farmacia',
-      entities: [Categoria],
+      entities: [Categoria, Produto],
       synchronize: true
     }),
-    CategoriaModule
+    CategoriaModule,
+    ProdutoModule
   ]
 })
 export class AppModule {}
